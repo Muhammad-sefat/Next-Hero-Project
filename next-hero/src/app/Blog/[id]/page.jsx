@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 
 const blogs = [
@@ -34,25 +33,14 @@ const blogs = [
   },
 ];
 
-const Page = () => {
+const page = ({ params }) => {
+  const { title, description } = blogs.find((blog) => blog.id == params.id);
   return (
-    <div>
-      {blogs.map((blog, index) => (
-        <div key={index} className="border border-orange-500 p-4 m-5 rounded">
-          <p>{blog.title}</p>
-          <p>{blog.description}</p>
-          <p className="mt-4">
-            <Link
-              className="bg-orange-500 p-2 rounded-md"
-              href={`/Blog/${blog.id}`}
-            >
-              View Details
-            </Link>
-          </p>
-        </div>
-      ))}
+    <div className="h-screen py-5 ml-5">
+      <p className="text-lg font-semibold">{title}</p>
+      <p>{description}</p>
     </div>
   );
 };
 
-export default Page;
+export default page;
