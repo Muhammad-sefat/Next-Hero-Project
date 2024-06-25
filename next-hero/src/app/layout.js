@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <header>
           <Navbar />
         </header>
-        <div className="h-screen">{children}</div>
+        <div>{children}</div>
         <footer className="bg-orange-500 p-4 rounded mb-5 text-center">
           This is Footer
         </footer>
