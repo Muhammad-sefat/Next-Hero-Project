@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const getData = async () => {
@@ -21,6 +22,9 @@ const page = async () => {
             <p>
               <span className="font-medium pt-3">Description :</span> {body}
             </p>
+            <button className="bg-orange-600 text-white rounded px-4 py-2 mt-2">
+              <Link href={`/Post/${id}`}>See Details</Link>
+            </button>
           </div>
         ))}
       </div>
